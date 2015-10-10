@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amscd}
+\usepackage{graphicx} 
+\usepackage{subfig} 
+\usepackage{tabularx}
+\usepackage{indentfirst} 
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{enumerate}
+
+\author{Wang Dongying}
+\title{Applications of Fermi Golden Rule}
+\begin{document}
+\maketitle
+
+	\section{Transition Probabilities and Fermi Golden Rule}
+
+		The famous Fermi Golden Rule describe the transition rate which depends on the strength of the coupling between the initial and fibal state of a system and upon the number of ways the transition can happen.
+
+		\begin{equation}
+		\begin{aligned}
+			\mathscr{W}(t) &= \frac{d\mathscr{P}(t)}{dt}\\
+						   &= \frac{2\pi}{\hbar}W_{fi}^{2}\rho(E_{fi})
+		\end{aligned}
+		\end{equation}
+
+		where the $W_{fi}$ is matrix element for the interaction, $\rho(E_{fi})$ is density of the final state.\\
+
+		Lifetime: $\tau = 1/\mathscr{W}$.
+
+	\section{Scattering and Decays from Fermi Golden Rule}
+
+		\paragraph{Fermi's Theory of nuclear $\beta$-decay}
+
+			$n \to p + e^{-} + \bar{\nu}\ \ \ \ \ \ \ \ \ \ (Z,N) \to (Z+1, Z-1) + e^{-} + \bar{\nu}$
+
+			The simplest form for thr matrix element describing nuclear $\beta$-decay is given by Fermi's ansatz:
+			\begin{equation}
+				W_{km} = \frac{G_{z}M}{V}
+			\end{equation}
+			where $G_{z}$ is Fermi constant, $M$ is overlap of the initial/final nuclear wave function and $V$ is the normalization volume. The density of possible states $dn/dE_{0} = \rho(E_{0})$. Typical value of $E_{0}$ is in the MeV range.\\
+			Main equations:
+			$$E_{0} = E + cq\ \ \ \ \ \ \ \ \ 0 = P + q + p$$
+			where $E$ is electron energy, $q$ is neutrino momentum, $P$ is nuclear momentum and $p$ is electron mometum. The density of states is found from the product of the electron and neutrino phase space volumes.
+
+			\begin{equation}
+				dn = \frac{Vd^{3}\bm{p}}{(2\pi\hbar)^{3}}\cdot\frac{Vd^{3}\bm{q}}{(2\pi\hbar)^{3}} = \frac{1}{4\pi^{4}\hbar^{6}c^{3}}p^{2}(E - E_{0})^{2}dpdE
+			\end{equation}
+
+			Back to the expression of transition rate,
+
+			\begin{equation}
+				d\mathscr{W} = \frac{G_{f}^{2}}{2\pi^{3}\hbar^{7}c^{3}}|M|^{2}p^{2}(E - E_{0})^{2}dp
+			\end{equation}
+
+			when the electron can be treated as being relastitic($E = cp$).
+
+			\begin{equation}
+				\int p^{2}(E - E_{0})^{2}dp = \frac{Q_{0}^{5}}{30c^{3}}
+			\end{equation}
+
+			where $Q_{0} = E_{0} - m_{e}c^{2}$. Then the transition rate can be calculated.
+
+			\begin{equation}
+				\mathscr{W} = \frac{G_{f}^{2}}{60\pi^{3}\hbar^{7}c^{6}}|M|^{2}Q_{0}^{5}
+			\end{equation}
+
+		\paragraph{cross section}
+
+			\begin{equation}
+				\mathscr{W} = d\sigma j_{i}
+			\end{equation}
+
+			where $\sigma$ is cross section and $j_{i}$ is the flux of initial particals.
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amscd}
+\usepackage{graphicx} 
+\usepackage{subfig} 
+\usepackage{tabularx}
+\usepackage{indentfirst} 
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{cite}
+
+\author{Wang Dongying}
+\title{Fermi's golden rule -- derivation and application}
+\begin{document}
+\maketitle
+
+Fermi's Golden Rule is a simple formula for the constant transition rate from one energy eigenstate of a quantum system into other ennergy eigenstates in a continuum,effected by a perturbation. It is always used calculating lifetime.
+
+\section{Derivation of Fermi's Golen Rule}
+	
+	Consider the system to begin in an eigenstate, $| i\rangle$, of a given Hamiltonian, $H_{0}$. Consider the effect of a (possibly time-dependent) perturbing Hamiltonian, $H^{'}$. If $H^{'}$ is time-independent, the system goes only into those states in the continuum that have the same energy as the initial state. If $H^{'}$ is oscillating as a function of time with an angular frequency $\omega$, the transition is into states with energies that differ by $\hbar\omega$ from the energy of the initial state.
+
+	\subsection{Time dependent perturbation theory}
+
+		Hamiltonian with perturbation is like
+
+		\begin{equation}
+			H = H_{0} + H^{'}(t)
+		\end{equation}
+
+		The unperturbed Time independent $Schr\ddot{o}dinger$ equation is satisfied
+
+		\begin{equation}
+			H_{0}|\phi_{n}\rangle = E_{n}|\phi_{n}\rangle
+		\end{equation}
+
+		The time dependent wave function can be expressed as 
+
+		\begin{equation}
+			|\Psi(t)\rangle = |\phi_{n}\rangle e^{-iE_{n}t/\hbar}
+		\end{equation}
+
+		Some derivation
+
+		\begin{equation}
+		\begin{aligned}
+			&H|\Psi(t)\rangle = [H_{0} + H^{'}(t)]|\Psi(t)\rangle = i\hbar\frac{\partial|\Psi(t)}{\partial t}\\
+			&|\Psi(t)\rangle = \Sigma_{n}c_{n}(t)|\psi_{n}(t)\rangle = \Sigma_{n}c_{n}(t)\phi_{n}\rangle e^{-iE_{n}t/\hbar}\\
+			&H_{0}\Sigma_{k}c_{k}(t)|\phi_{k}\rangle e^{-iE_{k}t/\hbar} + H^{'}(t)\Sigma_{k}c_{k}(t)|\phi_{k}\rangle e^{-iE_{k}t/\hbar} =\\
+			&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\hbar\frac{\partial}{\partial t}\Sigma_{k}c_{k}(t)|\phi_{k}\rangle e^{-iE_{k}t/\hbar}\\
+			&\Sigma c_{k}(t)E_{k}|\phi_{k}\rangle e^{-iE_{k}t/\hbar} + \Sigma c_{k}(t)H^{'}(t)|\phi_{k}\rangle e^{-iE_{k}t/\hbar} =\\
+			&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\hbar\Sigma \frac{\partial c_{k}(t)}{\partial t}|\phi_{k}\rangle e^{-iE_{k}t/\hbar} + \Sigma_{k}c_{k}(t)|\phi_{k}\rangle(-\frac{iE_{k}}{\hbar})e^{-iE_{k}t/\hbar}\\
+			&\Sigma_{k}c_{k}(t)W_{nk}(t)e^{-iE_{k}t/\hbar} = i\hbar\frac{\partial c_{n}(t)}{\partial t}e^{-iE_{n}t/\hbar}
+		\end{aligned}
+		\end{equation}
+
+		where $W_{nk}(t) = \langle\phi_{n}|H^{'}|\phi_{k}\rangle$. At last, we got the equation.
+
+		\begin{equation}
+			\frac{\partial c_{n}(t)}{\partial t} = \frac{1}{i\hbar}c_{i}(t)W_{ni}(t)e^{i\omega_{ni}t}
+		\end{equation}
+
+		In which, $i$ represents the initial state $|i\rangle$, and $\omega = (E_{n} - E_{i})/\hbar$. Solving this, we can get the final result.
+
+		\begin{equation}
+			c_{f}(t) =  \frac{1}{i\hbar}\int_{0}^{t}W_{fi}(t^{'})e^{i\omega_{fi}t^{'}}dt^{'}
+		\end{equation}
+
+		The probability of finding the system in the eigenstate $|\phi_{f}$ is
+
+		\begin{equation}
+		\begin{aligned}
+			\mathscr{P}(t)_{if} &= |\langle\phi_{f}|\psi(t)|^{2}\\
+							    &= \frac{1}{\hbar^{2}}|\int_{0}^{t}e^{i\omega_{fi}(t^{'})}dt^{'}|^{2}\
+		\end{aligned}
+		\end{equation}
+
+	\subsection{High frequency harmonic perturbation}
+
+		We could define a time dependent perturbation,
+
+		\begin{equation}
+			H^{'}(t) = 2Hcos(\omega t) = H(e^{i\omega t} + e^{-i\omega t})
+		\end{equation}
+
+		In this case, the probability becomes
+
+		\begin{equation}
+			\mathscr{P}_{if}(t) = \frac{W_{fi}^{2}}{\hbar^{2}}|\frac{e^{i(\omega_{fi} + \omega)t} - 1}{i(\omega_{fi} + \omega)} + \frac{e^{i(\omega_{fi} - \omega)t} - 1}{i(\omega_{fi} - \omega)}|^{2}
+		\end{equation}
+
+		Assuming that the oscilating angular frequency of the perturbation has a value near the Bohr angular frequency of the initial and final eigenstates, $\omega \sim \omega_{fi}$. The first term in Eq.9 becomes negliable, and the second term
+
+		\begin{equation}
+		\begin{aligned}
+			A_{-} &= \frac{e^{i(\omega_{fi} - \omega)t} - 1}{i(\omega_{fi} - \omega)}\\
+				  &= e^{i(\omega_{fi} - \omega)t/2}\frac{e^{i(\omega_{fi} - \omega)t/2} - e^{-i(\omega_{fi} - \omega)t/2}}{i(\omega_{fi} - \omega)}\\
+				  &= e^{i(\omega_{fi} - \omega)t/2}\frac{sin[(\omega_{fi} - \omega)t/2]}{(\omega_{fi} - \omega)/2}
+		\end{aligned}
+		\end{equation}
+
+		The probability becomes
+
+		\begin{equation}
+			\mathscr{P}_{fi}(t) = \frac{W_{fi}^{2}}{\hbar^{2}}\frac{sin^{2}[(\omega_{fi} - \omega)t/2]}{[(\omega_{fi} - \omega)/2]^{2}}
+		\end{equation}
+
+		when $\omega \sim \omega_{fi}$, the probability sharply increases. This is call resonant point. In $A_{+}$, the resonant point is located on $\omega = -\omega_{fi}$. The resonant approximation is justified when $|A_{+}|^{2}$ and $|A_{-}|^{2}$ is far apart. This means that the matrix elements of the perturbation must be much smaller than the energy seperation between the initial and final states.
+
+	\subsection{Continuum}
+		\begin{equation}
+			\mathscr{P}(t) = \int\mathscr{P}_{fi}(t)\rho(E)dE
+		\end{equation}
+
+		Because the probability is very sharp at the resonant point just like a delta function, the density $\rho(E)$ can be considered as a constant.
+
+		\begin{equation}
+		\begin{aligned}
+			\mathscr{P}(t) &= \frac{W_{fi}^{2}}{\hbar^{2}}\rho(E_{fi})\int\frac{sin^{2}[(\omega_{fi} - \omega)t/2]}{[(\omega_{fi} - \omega)/2]^{2}}\hbar d\omega\\
+						   &= \frac{2\pi}{\hbar}W_{fi}^{2}\rho(E_{fi})t
+		\end{aligned}
+		\end{equation}
+
+		the transition rate is 
+		\begin{equation}
+		\begin{aligned}
+			\mathscr{W}(t) &= \frac{d\mathscr{P}(t)}{dt}\\
+						   &= \frac{2\pi}{\hbar}W_{fi}^{2}\rho(E_{fi})
+		\end{aligned}
+		\end{equation}
+
+		This is called Fermi's Golden Rule.
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amscd}
+\usepackage{graphicx} 
+\usepackage{subfig} 
+\usepackage{tabularx}
+\usepackage{indentfirst} 
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{enumerate}
+
+\author{Wang Dongying}
+\title{Outline of Crystal field theory}
+\begin{document}
+\maketitle
+
+Crystal field theory describes the origins and consequeces of interaction of the surroundings on the orbital energy levels of a transition metal ion.
+
+	\section{Orbitals}
+		\begin{itemize}
+			\item Principal quantum number n
+			\item Azimuthal quantum number l
+			\item Magnetic quantum number $m_{l}$
+			\item Spin quantum number $m_{s}$
+			\item Spin-orbit coupling
+		\end{itemize}
+
+	\section{Shape and symmetrys of Orbitals}
+		\begin{itemize}
+			\item 's'orbital: sphereical symmetry
+			\item 'p'orbitals: $p_{x}$, $p_{y}$, $p_{z}$
+			\item 'd'orbitals: $d_{x^{2} - y^{2}}$, $d_{z^{2}}$, $d_{xy}$, $d_{yz}$, $d_{xz}$
+		\end{itemize}
+
+	\section{Application of group theory on crystal field splitting}
+		Group Theory plays a major role in finding the degeneracy and the symmetry types of the electronic levels in the crystal field.
+
+		\begin{itemize}
+			\item Splitting of the energy levels.
+			\item Symmetry types of the split levels.
+			\item Choice of basis functions to bring the Hamiltonian $H$ into block diagonal form. Spherical symmetry results in spherical harmonics $Y_{lm}(\theta, \phi)$ for basis functions.
+		\end{itemize}
+
+		The Hamiltonian for the impurity ion in a crystalline solid
+		\begin{equation}
+			H = \Sigma_{i}(\frac{p_{i}^{2}}{2m} - \frac{Ze^{2}}{r_{i\mu}} + \Sigma_{j}\frac{e^{2}}{r_{ij}} + \Sigma_{j}\xi_{ij}l_{i}\cdot s_{j} + \gamma_{i\mu}j_{i}\cdot I_{\mu}) + V_{xtal}
+		\end{equation}
+
+		Here $\xi_{ij}l_{i}\cdot s_{j}$ is the spin-orbit interaction of electrons on the impurity ion and $\gamma_{i\mu}j_{i}\cdot I_{\mu}$ is the hyperfine interaction of electrons on the ion. The perturbing crystal potential $V_{xtal}$ of the host ions acts on the impurity ion and lowers its spherical symmetry.
+
+		\begin{itemize}
+			\item Weak field. $V_{xtal}$ is small compared with spin-orbit interaction. Rare earth and ionic host crystals.
+			\item Strong field. $V_{xtal}$ is strong compared with spin-orbit interaction. Transition metal.
+		\end{itemize}
+
+	\section{Crystal field splitting in octahedral coordination}
+		Most interesting 3d transition metal, $e_{g}$ and $t_{2g}$. Since lobes of the $e_{g}$ orbitals point towards the ligands, electrons in these two orbitals are repelled to a greater extent than are those in the three $t_{2g}$ orbitals that project between the ligands.Therefore, the $e_{g}$ orbitals are raised in energy relative to the $t_{2g}$ orbitals. The energy separation between the $t_{2g}$ and $e_{g}$ orbitals is termed the crystal field splitting and is designated by $\Delta_{0}$. Alternatively, the symbol $10Dq$ utilized in ligand field theory is sometimes used, and $\Delta_{0} = 10Dq$.\\
+
+		Crystal field splitting in different coordinations:\\
+		\begin{itemize}
+			\item Cubic coordination: $\Delta_{c} = -\frac{8}{9}\Delta_{0}$
+			\item Tetrahedral coordination: $\Delta_{t} = -\frac{4}{9}\Delta_{0}$
+			\item Dodecahedral coordination: $\Delta_{d} = -\frac{1}{2}\Delta_{0}$
+		\end{itemize}
+
+	\section{The 10Dq parameter}
+		The magnitude of the crystal field splitting parameter, $10Dq$, may be estimated by two independent methods. The conventional way is from positions of absorption bands in visible-region spectra of transition metal compounds.The second method for estimating the value of A is from plots of thermodynamic data for series of similar compounds of transition elements.\\
+
+		Factors influencing values of $10Dq$:
+
+		\begin{itemize}
+			\item Type of cation: $Mn^{2+} < Ni^{2+} < Co^{2+} < Fe^{2+} < V^{2+} < Fe^{3+} < Cr^{3+} < V^{3+} < Co^{3+} < Mn^{4+}$
+			\item Type of ligand: $I^{-} < Br^{-} < Cl^{-} < SCN^{-} < F^{-} < urea = OH^{-} < CO_{3}^{2-} = oxalate < O^{2-} < H_{2}O < pyridine < NH_{3} < ethylene diamene < SO_{3}^{2-} < NO_{2}^{-} < HS^{-} < S^{2-} < CN^{-}$
+			\item Interatomic distance
+			\item Pressure: $10Dq \sim V^{-5/3}$
+			\item Temperature
+		\end{itemize}
+
+
+
+
+\end{document}
